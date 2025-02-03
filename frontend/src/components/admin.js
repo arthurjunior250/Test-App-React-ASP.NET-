@@ -422,6 +422,7 @@ import React, { useState, useEffect } from "react";
 import { Save, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { BASE_URL } from "./config";
 
 export default function AdminDashboard() {
   // State variables for all content sections
@@ -446,7 +447,7 @@ export default function AdminDashboard() {
 
   const fetchContent = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/homecontent");
+      const response = await fetch(`${BASE_URL}/api/homecontent`);
       const data = await response.json();
       setWelcomeMessage(data.welcomeMessage || "");
       setPlatformTitle(data.platformTitle || "");
@@ -471,7 +472,7 @@ export default function AdminDashboard() {
   // Save functions for each section
   const saveWelcomeMessage = async () => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/welcome", {
+      await fetch(`${BASE_URL}/api/homecontent/welcome`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ welcomeMessage }),
@@ -483,7 +484,7 @@ export default function AdminDashboard() {
 
   const savePlatformTitle = async () => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/platformtitle", {
+      await fetch(`${BASE_URL}/api/homecontent/platformtitle`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ platformTitle }),
@@ -495,7 +496,7 @@ export default function AdminDashboard() {
 
   const saveHeroCta = async () => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/herocta", {
+      await fetch(`${BASE_URL}/api/homecontent/herocta`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ heroCtaText, heroCtaLink }),
@@ -507,7 +508,7 @@ export default function AdminDashboard() {
 
   const saveFeature = async (feature) => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/features", {
+      await fetch(`${BASE_URL}/api/homecontent/features`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(feature),
@@ -519,7 +520,7 @@ export default function AdminDashboard() {
 
   const saveFinalCta = async () => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/finalcta", {
+      await fetch(`${BASE_URL}/api/homecontent/finalcta`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ finalCtaTitle, finalCtaDescription }),
@@ -531,7 +532,7 @@ export default function AdminDashboard() {
 
   const saveCtaSection = async () => {
     try {
-      await fetch("http://localhost:5000/api/homecontent/cta", {
+      await fetch(`${BASE_URL}/api/homecontent/cta`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ctaSection),
@@ -561,7 +562,7 @@ export default function AdminDashboard() {
     if (feature.id) {
       try {
         await fetch(
-          `http://localhost:5000/api/homecontent/features/${feature.id}`,
+          `${BASE_URL}/api/homecontent/features/${feature.id}`,
           {
             method: "DELETE",
           }
