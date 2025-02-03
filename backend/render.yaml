@@ -1,0 +1,11 @@
+services:
+  - name: aspnet-core-app
+    type: web
+    runtime: docker
+    repo: https://github.com/arthurjunior250/Test-App-React-ASP.NET
+    region: oregon
+    plan: free
+    envVars:
+      - key: ASPNETCORE_URLS
+        value: http://+:8080
+    dockerCommand: "dotnet backend.dll"
