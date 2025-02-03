@@ -1,0 +1,150 @@
+/* AdminDashboard.css */
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1,
+  h2 {
+    color: #4a4a68;
+  }
+  
+  /* Layout */
+  .max-w-4xl {
+    max-width: 1024px;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Input Fields */
+  input,
+  textarea {
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    padding: 0.5rem 1rem;
+    width: 90%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #9f7aea;
+    box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.3);
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Buttons */
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .bg-purple-600 {
+    background-color: #6b46c1;
+  }
+  
+  .bg-purple-600:hover {
+    background-color: #553c9a;
+  }
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  /* Card/Box Styles */
+  .border {
+    border: 1px solid #e2e8f0;
+  }
+  
+  .rounded {
+    border-radius: 8px;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Flexbox Utilities */
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .gap-4 {
+    gap: 1rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .flex {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .footer-icons{
+      display: flex;
+    flex-direction: row;
+    }
+  
+    .gap-4 {
+      gap: 0.5rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
