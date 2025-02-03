@@ -24,8 +24,8 @@ var connectionString = $"Server={Environment.GetEnvironmentVariable("DATABASE_HO
                       "MaximumPoolSize=100;";
 
 // Configure Kestrel to use specific ports
-builder.WebHost.UseUrls("http://localhost:5000");
-
+// builder.WebHost.UseUrls("http://localhost:5000");
+builder.WebHost.UseUrls("http://0.0.0.0:8080");
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -54,7 +54,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy", builder =>
     {
         builder
-            .WithOrigins("http://localhost:3000")
+            // .WithOrigins("http://localhost:3000")
+            .WithOrigins("https://testappdev.netlify.app/")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
