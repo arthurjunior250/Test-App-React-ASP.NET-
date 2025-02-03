@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Globe2, Cpu, Zap, Lock } from "lucide-react";
-
+import { BASE_URL } from "./config";
 function Home() {
   // const [message, setMessage] = useState("");
   // const [heroctalink, setheroctalink] = useState("");
@@ -41,7 +41,7 @@ function Home() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/homecontent")
+    fetch(`${BASE_URL}/api/homecontent`)
       .then((response) => response.json())
       .then((data) => {
         setContent(data);
