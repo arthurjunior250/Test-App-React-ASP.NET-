@@ -8,4 +8,4 @@ services:
     envVars:
       - key: ASPNETCORE_URLS
         value: http://+:8080
-    dockerCommand: "dotnet backend.dll"
+    dockerCommand: "dotnet Backend.dll"
