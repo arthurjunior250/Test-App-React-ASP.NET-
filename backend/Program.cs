@@ -9,20 +9,32 @@ var builder = WebApplication.CreateBuilder(args);
 Env.Load();
 
 // Build connection string from environment variables
-var connectionString = $"Server={Environment.GetEnvironmentVariable("DATABASE_HOST")};" +
-                      $"Port={Environment.GetEnvironmentVariable("DATABASE_PORT")};" +
-                      $"Database={Environment.GetEnvironmentVariable("DATABASE_NAME")};" +
-                      $"User={Environment.GetEnvironmentVariable("DATABASE_USERNAME")};" +
-                      $"Password={Environment.GetEnvironmentVariable("DATABASE_PASSWORD")};" +
-                      "ConnectionTimeout=60;" +
-                      "DefaultCommandTimeout=60;" +
+// var connectionString = $"Server={Environment.GetEnvironmentVariable("DATABASE_HOST")};" +
+//                       $"Port={Environment.GetEnvironmentVariable("DATABASE_PORT")};" +
+//                       $"Database={Environment.GetEnvironmentVariable("DATABASE_NAME")};" +
+//                       $"User={Environment.GetEnvironmentVariable("DATABASE_USERNAME")};" +
+//                       $"Password={Environment.GetEnvironmentVariable("DATABASE_PASSWORD")};" +
+//                       "ConnectionTimeout=60;" +
+//                       "DefaultCommandTimeout=60;" +
+//                       "AllowUserVariables=True;" +
+//                       "SslMode=none;" +
+//                       "AllowPublicKeyRetrieval=True;" +
+//                       "Pooling=true;" +
+//                       "MinimumPoolSize=0;" +
+//                       "MaximumPoolSize=100;";
+var connectionString = "Server=sql109.infinityfree.com;" +
+                      "Port=3306;" +
+                      "Database=if0_38234809_landing;" +
+                      "User=if0_38234809;" +
+                      "Password=m5RjqgPGSp84IT;" + // Replace with your real password
+                      "Connection Timeout=60;" +
+                      "Default Command Timeout=60;" +
                       "AllowUserVariables=True;" +
-                      "SslMode=none;" +
+                      "SslMode=None;" +
                       "AllowPublicKeyRetrieval=True;" +
                       "Pooling=true;" +
                       "MinimumPoolSize=0;" +
                       "MaximumPoolSize=100;";
-
 // Configure Kestrel to use specific ports
 // builder.WebHost.UseUrls("http://localhost:5000");
 builder.WebHost.UseUrls("http://0.0.0.0:8080");
