@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 Env.Load();
 
 // Build connection string from environment variables
+
 // var connectionString = $"Server={Environment.GetEnvironmentVariable("DATABASE_HOST")};" +
 //                       $"Port={Environment.GetEnvironmentVariable("DATABASE_PORT")};" +
 //                       $"Database={Environment.GetEnvironmentVariable("DATABASE_NAME")};" +
@@ -28,13 +29,14 @@ var connectionString = "Server=mysql-118ab1b2-updatenews250-5f2d.e.aivencloud.co
                       "User=avnadmin;" +
                       "Password=m5RjqgPGSp84IT;" + // Replace with your real password
                       "Connection Timeout=60;" +
-                      "Default Command Timeout=60;" +
+                      "DefaultCommandTimeout=60;" +
                       "AllowUserVariables=True;" +
-                      "SslMode=None;" +
+                      "SslMode=none;" +
                       "AllowPublicKeyRetrieval=True;" +
                       "Pooling=true;" +
                       "MinimumPoolSize=0;" +
                       "MaximumPoolSize=100;";
+
 // Configure Kestrel to use specific ports
 // builder.WebHost.UseUrls("http://localhost:5000");
 builder.WebHost.UseUrls("http://0.0.0.0:8080");
