@@ -23,19 +23,7 @@ var connectionString = $"Server={Environment.GetEnvironmentVariable("DATABASE_HO
                       "Pooling=true;" +
                       "MinimumPoolSize=0;" +
                       "MaximumPoolSize=100;";
-// var connectionString = "Server=mysql-118ab1b2-updatenews250-5f2d.e.aivencloud.com;" +
-//                       "Port=15504;" +
-//                       "Database=defaultdb;" +
-//                       "User=avnadmin;" +
-//                       "Password=m5RjqgPGSp84IT;" + // Replace with your real password
-//                       "Connection Timeout=60;" +
-//                       "DefaultCommandTimeout=60;" +
-//                       "AllowUserVariables=True;" +
-//                       "SslMode=none;" +
-//                       "AllowPublicKeyRetrieval=True;" +
-//                       "Pooling=true;" +
-//                       "MinimumPoolSize=0;" +
-//                       "MaximumPoolSize=100;";
+
 
 // Configure Kestrel to use specific ports
 builder.WebHost.UseUrls("http://localhost:5000");
@@ -77,10 +65,10 @@ builder.Services.AddCors(options =>
     });
 });
 
-// builder.WebHost.ConfigureKestrel(serverOptions =>
-// {
-//     serverOptions.ListenAnyIP(8080); 
-// });
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(8080); 
+});
 
 var app = builder.Build();
 
