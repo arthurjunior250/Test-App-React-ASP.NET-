@@ -22,10 +22,10 @@ Env.Load();
 //                       "Pooling=true;" +
 //                       "MinimumPoolSize=0;" +
 //                       "MaximumPoolSize=100;";
-var connectionString = "Server=sql109.infinityfree.com;" +
-                      "Port=3306;" +
-                      "Database=if0_38234809_landing;" +
-                      "User=if0_38234809;" +
+var connectionString = "Server=mysql-118ab1b2-updatenews250-5f2d.e.aivencloud.com;" +
+                      "Port=15504;" +
+                      "Database=defaultdb;" +
+                      "User=avnadmin;" +
                       "Password=m5RjqgPGSp84IT;" + // Replace with your real password
                       "Connection Timeout=60;" +
                       "Default Command Timeout=60;" +
