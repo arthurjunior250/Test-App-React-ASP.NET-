@@ -55,7 +55,7 @@ builder.Services.AddCors(options =>
     {
         builder
             // .WithOrigins("http://localhost:3000")
-            .WithOrigins("https://testappdev.netlify.app/")
+            .WithOrigins("https://testappdev.netlify.app")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
